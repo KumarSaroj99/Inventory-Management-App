@@ -66,7 +66,7 @@ namespace InventoryManagementSystem.ViewControllers
                     TransactionStore.DisplayTransaction();
                     break;
                 case 4:
-                    Console.WriteLine("Enter inventory to display");
+                    Console.WriteLine("Enter inventory id to display");
                     int inventoryId = Convert.ToInt32(Console.ReadLine());
                     GenerateReport(inventoryId);
                     break;
