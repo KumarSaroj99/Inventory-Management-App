@@ -12,28 +12,28 @@ namespace InventoryManagementSystem.Repository
 {
     internal class InventoryManager
     {
-        private readonly InventoryContext _context;
+    private readonly InventoryContext _context;
 
-        public InventoryManager(InventoryContext context)
-        {
-            _context = context;
-        }
-        public Inventory GetInventoryDetails(int inventoryId)
-        {
-           
-            var inventory = _context.Inventories
-                                    .Include(i => i.Products)
-                                    .Include(i => i.Suppliers)
-                                    .Include(i => i.Transactions)
-                                    .FirstOrDefault(i => i.InventoryId == inventoryId);
-
-            if (inventory == null)
-            {
-                throw new ItemNotFoundException("Inventory not found.");
-            }
-
-            return inventory;
-        }
-
+    public InventoryManager(InventoryContext context)
+    {
+        _context = context;
     }
+    public Inventory GetInventoryDetails(int inventoryId)
+    {
+       
+        var inventory = _context.Inventories
+                                .Include(item => item.Products)
+                                .Include(item => item.Suppliers)
+                                .Include(item => item.Transactions)
+                                .FirstOrDefault(item => item.InventoryId == inventoryId);
+
+        if (inventory == null)
+        {
+            throw new ItemNotFoundException("Inventory can not found.");
+        }
+
+        return inventory;
+    }
+
+  }
 }
