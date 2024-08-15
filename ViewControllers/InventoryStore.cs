@@ -19,7 +19,7 @@ namespace InventoryManagementSystem.ViewControllers
             while (true)
             {
 
-                Console.WriteLine("\nWelcome to Inventory Management System developed by : Samuel\n" +
+                Console.WriteLine("\nWelcome to Inventory Management System developed by : Sarojkumar Panda\n" +
                     "1. Product Management\n" +
                     "2. Supplier Management\n" +
                     "3. Transaction Management\n" +
